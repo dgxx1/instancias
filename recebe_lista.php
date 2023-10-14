@@ -1,5 +1,4 @@
 <?php
-// Função para calcular o total de cada item da lista
 function calcularTotal($lista) {
     $resultados = [];
 
@@ -32,13 +31,10 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Recebe a lista enviada na requisição POST
 $lista = $_GET['lista'];
 
-// Gere um ID de instância (pode ser um UUID ou algo único)
 $instancia_id = uniqid();
 
-// Insere os dados no banco de dados para processamento posterior
 $sql = "INSERT INTO lista_processamento (instancia_id, lista)
         VALUES ('$instancia_id', '$lista')";
 
